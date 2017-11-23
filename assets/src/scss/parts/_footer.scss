@@ -1,0 +1,42 @@
+$breadcrumb-divider: "-";
+
+.footer{
+	&__container{
+		@extend .hero__container;
+	}
+	&__row{
+		@extend .adverment__row;
+		@extend .align-items-center;
+	}
+	&__nav{
+		@extend .col-7;
+		&-list{
+			@extend .breadcrumb;
+			background-color: transparent;
+			&-elements{
+				@extend .breadcrumb-item;
+				& + &::before{
+					content: "-" !important;
+					color: $gray04;
+				}
+			}	
+		}
+		&-link{
+			@include font($font2, 400, rem(14), $gray04){
+				text-transform: uppercase;
+			}
+			@include hover(){
+				color: $green1;
+				text-decoration: none;
+			}
+			transition: all .3s ease;
+		}
+	}
+	&__about{
+		@extend .col-5;
+		@include font($font2, 400, rem(14),$gray04){
+			text-align: right;	
+		}
+		
+	}
+}

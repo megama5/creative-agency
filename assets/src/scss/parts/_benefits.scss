@@ -1,0 +1,32 @@
+.benefits{
+	padding-top: rem(80);
+	margin-bottom: rem(100);
+	&__container{
+		@extend .hero__container;
+	}
+	&__title-row{
+		@extend .row;
+		@extend .text-center;
+		@extend .justify-content-center;
+		@include classes ('col-12','col-md-8');
+		margin: 0 auto;
+		margin-bottom: rem(80);
+	}
+	&__title{
+		// @extend .col-12;
+		@extend .text-center;	
+		@extend .article__title;	
+	}
+	&__subtitle{
+		// @extend .col-8;
+		@extend .justify-content-center;
+		@extend .article__text;
+	}
+	&__list{
+		@extend .row;
+		padding-top: rem(20);
+		&-item{
+			@include classes( 'col-12', 'col-md-4');
+		}
+	}
+}

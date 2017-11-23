@@ -1,0 +1,14 @@
+{
+  "name": "Creative-Agancy",
+  "description": "Product",
+  "main": "gulpfile.js",
+  "author": "Petya",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+
+  }
+}

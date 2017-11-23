@@ -1,0 +1,38 @@
+.data{
+	padding-top: rem(150);
+	margin-bottom: rem(75);
+	&__container{
+		@extend .hero__container;
+	}
+	&__row{
+		@extend .adverment__row;
+	}
+	&__part{
+		@include classes('col-md-6','col-12');
+	}
+	&__info{
+		margin-bottom: rem(30);
+		&-title{
+			@include font($font1, 700, rem(18)){
+				text-transform: uppercase;
+			}
+		}
+		&-text, &-addr, &-phone{
+			@include font($font2, 400, rem(14), $gray02);
+		}
+		&-mail{
+			@include font($font2, 700, rem(14), $gray02);
+			transition: all .3s ease;
+			@include hover(){
+				text-decoration: none;
+				color: $commonColor;
+			}
+		}
+	}
+	&__map{
+		max-width: 100%;
+		height: rem(840);
+		background: url('../img/map-bg.jpg') center no-repeat;
+		overflow: hidden;
+	}
+}

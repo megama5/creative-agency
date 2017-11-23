@@ -1,0 +1,75 @@
+.team{
+	padding-bottom: rem(150);
+	&__container{
+		@extend .hero__container;
+	}
+	&__title-row{
+		@extend .benefits__title-row;
+		margin-bottom: rem(100);
+	}
+	&__title{
+		@extend .benefits__title;
+	}
+	&__subtitle{
+		@extend .benefits__subtitle;
+	}
+	&__list{
+		@extend .row;
+		&-item{
+			@include classes('col-md-3','col-12');
+			@include size(rem(266),rem(333));
+			margin-bottom: rem(32);
+		}
+		&-img{
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			@for $i from 1 to 9{
+				&--#{$i}{ background-image: url('../img/ph-'+$i+'.jpg'); }
+			}
+		}
+	}
+	&__footer{
+		@extend .align-items-center;
+		@include make-row();
+		background-color: $gray01;
+		margin: 0;
+		min-height: rem(150);
+		&-lwrap{
+			@extend .col-12;
+			@extend .col-md-9;
+			@extend .text-left;
+			padding-left: rem(45);
+		}
+		&-rwrap{
+			@extend .col-12, .col-md-3;
+			@extend .text-right;
+			padding-right: rem(45);
+		}
+		&-text{
+			@include font($font2,400,rem(18)){
+				font-style: italic;
+			};
+			margin: 0;
+		}
+		&-btn{
+			@include size(rem(165), rem(50));
+			@include font($font1, 700, rem(14), $white){
+				text-transform: uppercase;
+			};
+			@include hover(){
+				color: $commonColor;
+				text-decoration: none;
+			};
+			cursor: pointer;
+			transition: all .3s ease;
+			background-color: $green1;
+			border: none;
+			&:focus{
+				outline: none;	
+			}
+    	
+		}
+	}
+}

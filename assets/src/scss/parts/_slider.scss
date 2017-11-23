@@ -1,0 +1,25 @@
+.slider{
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__img{
+  	@include size(rem(82));
+  	border-radius: 50%;
+  	overflow: hidden;
+  	margin-bottom: rem(30);
+    &-src{
+    	@include size(100%);
+    }
+  }
+	&__text{
+		@include font($font2, 400, rem(14));
+		margin-bottom: rem(30);
+	}
+	&__btn{
+		@extend .team__footer-btn;
+		@include size(rem(99), rem(29));
+		margin-bottom: rem(30);
+	}
+}

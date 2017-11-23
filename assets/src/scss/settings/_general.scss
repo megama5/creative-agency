@@ -1,0 +1,41 @@
+*{
+	box-sizing: border-box;
+	color: $commonColor;
+	font-size: $commonFontSize;
+}
+
+.flex-row{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.flex-col{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+// added a _ sufix ti fix name colission
+.container_{ 
+	max-width: $containerWidth;
+	// width: 100%;
+	// margin: 0 auto;
+
+}
+
+// .row{
+// 	width: 100%;
+// 	@extend .flex-row;
+// }
+
+.row-container{
+	@extend .container_;
+	@extend .flex-row;
+}
+
+.col-container{
+	@extend .container_;
+	@extend .flex-col;
+}

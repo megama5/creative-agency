@@ -1,0 +1,14 @@
+@import 'settings/functions';
+@import 'settings/variables';
+@import 'settings/mixins';
+
+@import 'settings/reset';
+
+//need to be rebuild later
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import '../../../components/Ionicons/scss/ionicons';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
+
+@import 'settings/fonts';
+@import 'settings/general';

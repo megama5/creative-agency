@@ -1,0 +1,62 @@
+//retrun css setting for col in grid
+@mixin col($col, $colBase: 12){
+	max-width: percentage( $col * 1 / $colBase  );
+	width: 100%;
+	padding: 0 $gup;
+} 
+
+//for sections title
+@mixin font($font, $font-weight, $font-size: $commonFontSize, $color: $commonColor){
+	font-family: #{$font};
+	color: $color;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: calc( #{$font-size} + #{rem(6)} ) ;
+	@content;
+}
+
+// some useful code
+// @depreceted
+@mixin transition($param: all .3s ease){
+	-webkit-transition: #{$param};
+	-moz-transition: #{$param};
+	-o-transition: #{$param};
+	transition: #{$param};
+}
+
+@mixin svg($color, $toColor){
+	& svg{
+		width: rem(133);
+		height: rem(19);
+	& use{
+			fill: $color;
+			transition: all .3s ease;
+		}	
+	}
+	&:hover svg use{
+		fill: $toColor;
+	}
+}
+
+@mixin classes($list...){
+    @each $class in $list{
+        @extend #{'.' + $class};
+    }
+}
+
+@mixin greenLine(){
+	z-index: 10;
+	position: relative;
+	&::before{
+		z-index: -1;
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: rem(68);
+		height: rem(21);
+		background-color: $green1;
+	}
+}
+

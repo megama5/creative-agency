@@ -1,0 +1,37 @@
+.contact-form{
+	margin-bottom: rem(100);
+	&__row{
+		@include make-row();
+	}
+	&__col{
+		@extend .col;
+		margin-bottom: rem(30);
+	}
+	&__input{
+		@extend .form-control;
+		min-width: rem(200);
+		padding: rem(19);
+		border: rem(1) solid rgba(0, 0, 0, 0.1);
+		background-color: $gray06;
+		border-radius: 0;
+		resize: none;
+
+		@include font($font1, 700, rem(12),$commonColor);
+		&--line{
+			height: rem(50);
+		}
+		&::placeholder{
+			@include font($font1, 700, rem(12),$gray05);
+			text-transform: uppercase;
+		}
+		&:focus{
+			outline: none;
+			box-shadow: none;
+			border-color: rgba(0, 0, 0, 0.1); 
+		}
+	}
+	&__submit{
+		@extend .mailing__battons-submit;
+		margin-bottom: rem(20);
+	}
+}

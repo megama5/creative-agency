@@ -1,0 +1,9 @@
+// retrun px to rem conversion;
+@function rem($px){
+	@return #{$px / 16}rem;
+}
+
+// return line height as calc(...);
+@function lh($fs){
+	@return calc( #{rem($fs)} + #{rem(6)} ); 
+}

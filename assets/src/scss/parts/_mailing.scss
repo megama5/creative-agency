@@ -1,0 +1,47 @@
+.mailing{
+	&__wrap{
+		background-color: $white;
+		padding: rem(20) rem(26) rem(20);
+	}
+	&__title{
+		@include font($font1, 700, rem(24)){
+			text-transform: uppercase;
+			line-height: rem(36);
+		}
+		max-width: 80%;
+	}
+	&__text{
+		@include font($font2, 400, rem(16), $gray02)
+	}
+	&__battons{
+		display: flex;
+		position: relative;
+		&-label{
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 0;
+		}
+		&-input{
+			width: 80%;
+			padding-left: rem(20);
+			padding-right: rem(20);
+			border: rem(1) solid rgba(0, 0, 0, 0.1);
+			@include font($font1, 700, rem(12), $commonColor);
+			&::placeholder{
+				@include font($font1, 700, rem(12), $gray03);
+			}
+			&:focus{
+				outline: none;
+			}
+		}
+		&-submit{
+			@extend .team__footer-btn;
+			min-width: rem(135);
+			min-height: rem(50);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.item{
+	margin-bottom: rem(50);
+	&__title{
+		@include font($font1, 700, rem(18));
+		line-height: rem(40);
+		padding-left: rem(60);
+		position: relative;
+		&-icon{
+			@include size(rem(40));
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: $green1;
+			&--1{
+				background-image: url('../img/i-mobile.png');
+			}
+			&--2{
+				background-image: url('../img/i-infinity.png');
+			}
+			&--3{
+				background-image: url('../img/i-wordpress.png');
+			}
+			&--4{
+				background-image: url('../img/i-chart.png');
+			}
+			&--5{
+				background-image: url('../img/i-config.png');
+			}	
+			&--6{
+				background-image: url('../img/i-tools.png');
+			}										
+		}
+	}
+	&__text{
+		@extend .article__text;
+	}
+}

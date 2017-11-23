@@ -1,0 +1,34 @@
+.social{
+	padding-bottom: rem(50);
+	&__container{
+		@extend .hero__container;
+	}
+	&__row{
+		@extend .adverment__row;
+	}
+	&__list{
+		@extend .col-12;
+		text-align: right;
+		&-item{
+			display: inline-block;
+			font-size: rem(18);	
+			color: $gray02;
+			& + &{
+				margin-left: rem(13);
+			}
+	
+			@include hover(){
+				& i{
+					color: $green1;	
+				}
+			}
+		  &-i{
+				transition: all .3s ease;
+			}
+		}
+		&--left{
+			text-align: left;
+			padding-left: 0;
+		}
+	}
+}
