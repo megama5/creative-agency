@@ -22,11 +22,11 @@
 		}
 		&-mail{
 			@include font($font2, 700, rem(14), $gray02);
-			transition: all .3s ease;
 			@include hover(){
 				text-decoration: none;
 				color: $commonColor;
 			}
+			transition: all .3s ease;
 		}
 	}
 	&__map{

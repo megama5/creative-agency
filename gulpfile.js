@@ -17,10 +17,6 @@ const plugins = {
         path : 'node_modules/bootstrap/',
         jsFilePath: function(){ return this.path + 'dist/js/bootstrap.min.js';},
     },
-    ionicons : {
-        path : 'components/ionicons/',
-        jsFilePath: function(){ return '';},
-    },
     slickslider :{
         path : 'node_modules/slick-carousel/slick/',
         jsFilePath: function(){ return this.path + 'slick.min.js';},
@@ -50,20 +46,21 @@ const compatability = [
     'iOS 7'
 ];
 
+// user js file pathes
+const userJs = [
+    'assets/src/javascript/scripts.js',
+    'assets/src/javascript/map.js',
+];
 // include this js file into project in current order
 const pluginsJs = [];
-/**
-* additional includes can ba dun with push and shift array commands
-*/
-for(var element in plugins){
-    pluginsJs.push( plugins[element].jsFilePath() );
-}
+// additional includes can ba dun with push and shift array commands
 
+
+// this tasks will be runs befro default task
 const beforeDefaultTasks = [
     'sass', 
     'javascript', 
-    //'browser-sync' //don't need this
-    ];
+];
 
 
 /****************************************************/
@@ -77,7 +74,7 @@ gulp.task('sass', function () {
         .pipe(sass(
             {
                 outputStyle: 'compressed',
-                includePaths:PATH.scss,
+                includePaths: PATH.scss,
             }
         ).on('error', sass.logError))
         .pipe(autoprefixer(
@@ -92,9 +89,12 @@ gulp.task('sass', function () {
 
 
 gulp.task('javascript', function (cb) {
-    pluginsJs.push('assets/src/javascript/scripts.js');
-    pluginsJs.push('assets/src/javascript/map.js');
-
+    for(var element in plugins){
+        pluginsJs.push( plugins[element].jsFilePath() );
+    }
+    for(var element of userJs){
+        pluginsJs.push( element );
+    }
     pump([
             gulp.src(pluginsJs)
             .pipe(concat('global.js')),

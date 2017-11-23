@@ -1,14 +1,36 @@
+/********************************
+Project functions
+********************************/
 @import 'settings/functions';
+/********************************
+Project variables
+********************************/
 @import 'settings/variables';
+/********************************
+Project mixins
+********************************/
 @import 'settings/mixins';
-
+/********************************
+rest css
+********************************/
 @import 'settings/reset';
-
-//need to be rebuild later
-@import '../../../node_modules/bootstrap/scss/bootstrap';
-@import '../../../components/Ionicons/scss/ionicons';
-@import '../../../node_modules/slick-carousel/slick/slick.scss';
-@import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
-
+/********************************
+bootstrap styles sheets
+********************************/
+@import 'bootstrap';
+/********************************
+ionicons icons pack 
+********************************/
+@import 'ionicons';
+/********************************
+Slick slider style sheets
+********************************/
+@import 'slick';
+/********************************
+Project fonts
+********************************/
 @import 'settings/fonts';
+/********************************
+Project general settings
+********************************/
 @import 'settings/general';
