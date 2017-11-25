@@ -1,0 +1,15 @@
+.blog{
+	padding-top: rem(150);
+	padding-bottom: rem(50);
+	@include create-container_vs_row();
+	&__left-side{
+		@include classes(col-md-9,col-12);
+	}
+	&__right-side{
+		@extend .col-lg-5;
+		@include media-breakpoint-down(sm){
+			display: none;
+		}
+		justify-content: center;
+	}
+}

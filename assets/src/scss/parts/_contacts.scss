@@ -2,14 +2,9 @@
 	padding: rem(50) 0;
 	background-color: $green1;
 	margin-bottom: rem(50);
-	&__container{
-		@extend .hero__container;
-	}
-	&__row{
-		@extend .adverment__row;
-	}
+	@include create-container_vs_row();
 	&__part{
-		@extend .adverment__part;
+		@include classes(col-md-6,col-sm-12);
 		margin-bottom: rem(20);
 	}
 	&__title{
@@ -19,7 +14,7 @@
 		margin-bottom: rem(30);
 	}
 	&__btn{
-		@extend .team__footer-btn;
+		@include create-btn-style();
 		background-color: $white;
 		color: $green1;
 	}

@@ -1,9 +1,129 @@
-//retrun css setting for col in grid
-@mixin col($col, $colBase: 12){
-	max-width: percentage( $col * 1 / $colBase  );
-	width: 100%;
-	padding: 0 $gup;
-} 
+// some useful code
+// @depreceted
+@mixin transition($param: all .3s ease){
+	-webkit-transition: #{$param};
+	-moz-transition: #{$param};
+	-o-transition: #{$param};
+	transition: #{$param};
+}
+
+/**
+	Create &__container position with bootstrap container
+	and max-width with default value.
+	Using @content.
+*/
+@mixin create-container($max-width: $containerWidth){
+	&__container{
+		@include make-container();
+		max-width: $max-width;
+		@content;
+	}
+}
+
+/**
+	Create &__row position with bootstrap row.
+	Using @content.
+*/
+@mixin create-row(){
+	&__row{
+		@include make-row;
+		@content;
+	}
+}
+
+/**
+	Create &__row and &__container sass possitions
+	Using @content
+*/
+@mixin create-container_vs_row(){
+		@include create-container();
+		@include create-row();
+		@content;		
+}
+
+/**
+	Create styles for title and green line on background
+	at the line start for some site blocks.
+	Using @content
+*/
+@mixin create-title-style(){
+	@include font($font1, 700, rem(30)){
+		text-transform: uppercase;
+	};
+	margin-bottom: rem(30);
+	@include greenLine();
+	@content;
+}
+
+/**
+	Create styles for text for some site blocks.
+	Using @content.
+*/
+@mixin create-text-style(){
+	@include font($font2, 400, rem(14));
+	@content;
+}
+
+/**
+	Create style for green button with white text.
+	All hovers included.
+	Using @content.
+*/
+@mixin create-btn-style(){
+	@include size(rem(165), rem(50));
+	@include font($font1, 700, rem(14), $white){
+		text-transform: uppercase;
+	};
+	@include hover(){
+		color: $commonColor;
+		text-decoration: none;
+	};
+	@include transition();
+	cursor: pointer;
+	background-color: $green1;
+	border: none;
+	&:focus{
+		outline: none;	
+	}
+	@content;
+}
+
+/**
+	Create style for socila button with heart and message icon.
+	All hovers included.
+	Using @content.
+*/
+@mixin create-social-btn-style($width: rem(35), $icon-color: $gray05){
+	$class:&; // for hovers
+	width: $width;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	line-height: rem(30);
+	display: inline-flex;
+	align-items:center;
+	cursor: pointer;
+	&-i{
+		margin-right: rem(9);
+		font-size: rem(18);
+		font-weight: 400;
+		color:$icon-color;
+		@include transition();
+	}
+	&-c{
+		@include font($font1, 400, rem(14),$gray05);
+	}
+	&:focus{
+		outline: none;
+	}
+	&:hover{
+		& #{$class}-i{
+			color:$gray01;
+		}
+	}
+}
+
+
 
 //for sections title
 @mixin font($font, $font-weight, $font-size: $commonFontSize, $color: $commonColor){
@@ -15,14 +135,7 @@
 	@content;
 }
 
-// some useful code
-// @depreceted
-@mixin transition($param: all .3s ease){
-	-webkit-transition: #{$param};
-	-moz-transition: #{$param};
-	-o-transition: #{$param};
-	transition: #{$param};
-}
+
 
 @mixin svg($color, $toColor){
 	& svg{
@@ -40,7 +153,7 @@
 
 @mixin classes($list...){
     @each $class in $list{
-        @extend #{'.' + $class};
+        @extend .#{$class};
     }
 }
 

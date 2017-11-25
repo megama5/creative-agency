@@ -18,8 +18,9 @@
 		margin-bottom: rem(30);
 	}
 	&__btn{
-		@extend .team__footer-btn;
-		@include size(rem(99), rem(29));
-		margin-bottom: rem(30);
+		@include create-btn-style(){
+  		@include size(rem(99), rem(29));
+  		margin-bottom: rem(30);
+    }
 	}
 }

@@ -1,11 +1,7 @@
 .article{
 	text-align: left;
 	&__title{
-		@include font($font1, 700, rem(30)){
-			text-transform: uppercase;
-		};
-		@include greenLine();
-		margin-bottom: rem(30);
+		@include create-title-style();
 	}
 	&__subtitle{
 		@include font($font2, 800, rem(14)){

@@ -15,9 +15,7 @@
 		background-attachment: fixed;
 		filter: grayscale(95%);
 	}
-	&__container{
-		@include make-container();
-		max-width: $containerWidth;
+	@include create-container(){
 		height: 100%;
 		position: relative;
 	}

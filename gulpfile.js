@@ -114,6 +114,6 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('default', beforeDefaultTasks, function () {
-    gulp.watch('./assets/src/scss/**/*.*', ['sass']);
-    gulp.watch('./assets/src/javascript/scripts.js', ['javascript']);
+    gulp.watch('./assets/src/scss/**/*.scss', ['sass']);
+    gulp.watch('./assets/src/javascript/*.js', ['javascript']);
 });

@@ -1,0 +1,66 @@
+.post{
+	padding-bottom: rem(100);
+	&__img{
+		max-width: rem(750);
+		max-height: rem(500);
+		width: 100%; 
+		background-color: $gray07;
+		margin-bottom: rem(30);
+		&-src{
+			width: 100%;
+		}
+	}
+	&__action{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin-bottom: rem(20);
+		&-date{
+			@include create-btn-style(){
+				height: rem(30);
+				margin-right: rem(15);
+			};
+		}
+		&-comment{
+			@include create-social-btn-style();
+			margin-right: rem(20);
+		}
+		&-like{
+			@include create-social-btn-style(rem(47),$red);
+		}
+	}
+	&__info{
+		max-width: rem(750);
+		&-title{
+			@include font($font1, 700, rem(18)){
+				text-transform: uppercase;
+			};
+		}
+		&-text{
+			@include font($font2, 400, rem(14));
+			margin-bottom: rem(30);
+		}
+		&-link{
+			$self:&;
+			@include font($font1, 700, rem(14)){
+				text-transform: uppercase;
+			};
+			@include transition();
+			@include hover(){
+				text-decoration: none;
+				color: $gray01;
+				
+				& #{$self}-i{
+					color: $gray01;
+				}
+			}
+			&-i{
+				@include font($font2, 400, rem(14));
+			}
+			
+
+		}
+
+	}
+}

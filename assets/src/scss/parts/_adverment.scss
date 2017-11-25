@@ -1,14 +1,8 @@
 .adverment{
 	padding-bottom: rem(150);
-	&__container{
-		@extend .hero__container;
-	}
-	&__row{
-		@include make-row();
-	}
+	@include create-container_vs_row();
 	&__part{
-		@extend .col-md-6;
-		@extend .col-sm-12;
+		@include classes(col-md-6,col-sm-12);
 		&--slider{}
 	}
 	&__list{
@@ -16,7 +10,6 @@
 		&-item{
 			@extend .col;
 		&-data{
-				// @include size(rem(165), rem(100));
 				border: rem(1) solid rgba(0, 0, 0, 0.15);
 				margin-bottom: rem(30);
 				display: flex;
@@ -27,7 +20,7 @@
 				padding: rem(10) rem(15);
 				opacity: .5;
 				cursor: pointer;
-				transition: all .3s ease;
+				@include transition();
 				@include hover(){
 					opacity: 1;
 				}

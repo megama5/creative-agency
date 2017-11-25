@@ -36,12 +36,13 @@
 			}
 		}
 		&-submit{
-			@extend .team__footer-btn;
-			min-width: rem(135);
-			min-height: rem(50);
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include create-btn-style(){
+				min-width: rem(135);
+				min-height: rem(50);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 	}
 }

@@ -1,10 +1,8 @@
 .about{
 	padding-top: rem(150);
 	padding-bottom: rem(80);
-	&__container{
-		@extend .hero__container;
-	}
+	@include create-container();
 	&__article{
-		@include classes('col-md-6','col-12');
+		@include classes(col-md-6,col-12);
 	}
 }

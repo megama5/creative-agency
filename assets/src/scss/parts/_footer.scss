@@ -1,11 +1,6 @@
-$breadcrumb-divider: "-";
-
 .footer{
-	&__container{
-		@extend .hero__container;
-	}
-	&__row{
-		@extend .adverment__row;
+	@include create-container();
+	@include create-row(){
 		@extend .align-items-center;
 	}
 	&__nav{
@@ -29,7 +24,7 @@ $breadcrumb-divider: "-";
 				color: $green1;
 				text-decoration: none;
 			}
-			transition: all .3s ease;
+			@include transition();
 		}
 	}
 	&__about{

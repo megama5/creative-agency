@@ -1,4 +1,4 @@
-/***Contacts page styles*********/
+/***Blog page styles*********/
 
 /********************************
 Project starting settings
@@ -8,8 +8,10 @@ Project starting settings
 Project page parts
 ********************************/
 @import 'parts/hero';
-@import 'parts/data';
 @import 'parts/contact-form';
+@import 'parts/blog';
+@import 'parts/post';
+
 @import 'parts/contacts'; 
 @import 'parts/mailing'; 
 @import 'parts/footer'; 
