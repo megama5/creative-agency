@@ -1,0 +1,40 @@
+.search{
+	position: relative;
+	&__label{
+		font-size: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__input{
+		width:100%;
+		height: rem(40);
+		padding-left: rem(15);
+		padding-right: rem(55);
+		background-color: $gray08;
+		border: none;
+		@include font($font1, 700, rem(12), $gray03);
+		&:focus{
+			outline: none;
+		}
+		&::placeholder{
+			@include font($font1, 700, rem(12)){
+				text-transform: uppercase;
+			}
+		}
+	}
+	&__btn{
+		position: absolute;
+    top: rem(8);
+    right: rem(20);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+		&:focus{
+			outline: none;
+		}
+		&-i{
+	    font-size: rem(18);
+		}
+	}
+}

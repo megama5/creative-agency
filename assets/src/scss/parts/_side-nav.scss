@@ -1,0 +1,37 @@
+.side-nav{
+	justify-content: space-between;
+	position: relative;
+	border: none !important;
+	&::after{
+		border-bottom: rem(2) solid $gray09;
+    content: "";
+    bottom: rem(-1);
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+	}
+	&__link{
+		@extend .nav-item;
+		@extend .nav-link;
+		border: none !important;
+		padding-bottom: rem(20);
+		transition: color .3s ease;
+		@include font($font1, 700, rem(14)){
+			text-transform: uppercase;
+		}
+		@include media-breakpoint-down(xl){
+			padding-left: rem(5);
+			padding-right: rem(5);
+		}
+		&.active{
+			border-bottom: rem(2) solid $green1 !important;
+		}
+		@include hover(){
+			@include font($font1, 700, rem(14),$gray09){
+				text-transform: uppercase;
+			}
+		}
+	}
+
+
+}

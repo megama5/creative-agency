@@ -1,0 +1,37 @@
+.tab-element{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: rem(10);
+
+	&__img{
+		@include size(rem(81));
+	
+		overflow: hidden;
+		position: relative;
+		margin-right: rem(15);
+		&-src{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	&__info{
+		padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		@extend .col;
+		&-title{
+			margin-bottom: 0;
+			@include font($font1, 700, rem(14)){
+				text-transform: uppercase;
+			}
+		}
+		&-date{
+			margin-bottom: 0;
+			@include font($font2, 400, rem(12), $gray04);
+		}
+	}
+}

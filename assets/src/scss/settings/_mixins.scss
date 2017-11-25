@@ -69,18 +69,18 @@
 	All hovers included.
 	Using @content.
 */
-@mixin create-btn-style(){
+@mixin create-btn-style($bgColor:$green1, $color:$white, $tColor: $commonColor, $font:$font1){
 	@include size(rem(165), rem(50));
-	@include font($font1, 700, rem(14), $white){
+	@include font($font, 700, rem(14), $color){
 		text-transform: uppercase;
 	};
 	@include hover(){
-		color: $commonColor;
+		color: $tColor;
 		text-decoration: none;
 	};
 	@include transition();
 	cursor: pointer;
-	background-color: $green1;
+	background-color: $bgColor;
 	border: none;
 	&:focus{
 		outline: none;	

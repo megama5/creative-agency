@@ -27,7 +27,7 @@
 			padding-left: rem(20);
 			padding-right: rem(20);
 			border: rem(1) solid rgba(0, 0, 0, 0.1);
-			@include font($font1, 700, rem(12), $commonColor);
+			@include font($font1, 700, rem(12));
 			&::placeholder{
 				@include font($font1, 700, rem(12), $gray03);
 			}

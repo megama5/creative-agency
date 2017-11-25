@@ -1,0 +1,10 @@
+.side-panel{
+	&__element{
+		margin-bottom: rem(50);
+	}
+	&__header{
+		@include font($font1, 700, rem(14)){
+			text-transform: uppercase;
+		}
+	}
+}
